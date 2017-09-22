@@ -21,7 +21,7 @@ var bot = new builder.UniversalBot(connector, [
     function (session, args) {
         
           savedAddress = session.message.address;
-          console.log(savedAddress);
+          console.log('savedAddress set to:' + savedAddress);
         
           var message = 'Hey there, I\'m going to interrupt our conversation and start a survey in a few seconds.';
           session.send(message);
@@ -36,6 +36,7 @@ var bot = new builder.UniversalBot(connector, [
         }]
 );
 
+bot = require("./botadapter").patch(bot);
 
 // handle the proactive initiated dialog
 bot.dialog('/survey', function (session, args, next) {
@@ -49,6 +50,7 @@ bot.dialog('/survey', function (session, args, next) {
 
 // initiate a dialog proactively 
 function startProactiveDialog(address) {
+  console.log('>>>startProactiveDialog triggered by:' + address);
   bot.beginDialog(address, "*:/survey");
 }
 
@@ -58,7 +60,7 @@ server.post('/api/messages', connector.listen());
 // Do GET this endpoint to start a dialog proactively
 server.get('/api/CustomWebApi', function (req, res, next) {
   console.log('webapi triggered');
-  startProactiveDialog('c5ngbae1f06i');
+  startProactiveDialog(savedAddress);
   res.send('triggered');
   next();
 });
