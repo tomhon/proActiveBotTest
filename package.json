@@ -1,16 +1,24 @@
 {
-    "name": "proactivetest",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "botbuilder": "^3.10.1",
-      "restify": "^6.0.1"
-    }
-  }
-  
+  "name": "proactivetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "botbuilder": "^3.10.1",
+    "restify": "^6.0.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomhon/proActiveBotTest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomhon/proActiveBotTest/issues"
+  },
+  "homepage": "https://github.com/tomhon/proActiveBotTest#readme"
+}
