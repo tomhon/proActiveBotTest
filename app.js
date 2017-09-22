@@ -57,6 +57,7 @@ server.post('/api/messages', connector.listen());
 
 // Do GET this endpoint to start a dialog proactively
 server.get('/api/CustomWebApi', function (req, res, next) {
+  console.log('webapi triggered');
   startProactiveDialog('c5ngbae1f06i');
   res.send('triggered');
   next();
